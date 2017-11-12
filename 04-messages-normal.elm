@@ -6,8 +6,9 @@ import Html.Events exposing (..)
 
 
 type Mesaj
-    = MăreșteImaginea
-    | Обратно
+    = IncreaseImage
+    | ResetImage
+    | DecreaseImage
 
 
 imageUrl =
@@ -23,16 +24,19 @@ main =
 
 
 initialModel =
-    200
+    500
 
 
 update : Mesaj -> Int -> Int
 update msg model =
     case msg of
-        MăreșteImaginea ->
+        IncreaseImage ->
             model + 50
 
-        Обратно ->
+        DecreaseImage ->
+            model - 50
+
+        ResetImage ->
             initialModel
 
 
@@ -42,8 +46,9 @@ view model =
         []
         [ h1 [] [ text "This is my cat" ]
         , p []
-            [ button [ onClick MăreșteImaginea ] [ text "mărește" ]
-            , button [ onClick Обратно ] [ text "x" ]
+            [ button [ onClick DecreaseImage ] [ text "small" ]
+            , button [ onClick ResetImage ] [ text "x" ]
+            , button [ onClick IncreaseImage ] [ text "big" ]
             ]
         , img
             [ src imageUrl
