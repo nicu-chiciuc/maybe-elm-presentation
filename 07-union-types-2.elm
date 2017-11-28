@@ -3,24 +3,24 @@ module Main exposing (main)
 import Html exposing (Html, text)
 
 
-type PoateNumar
-    = FaraNumar
-    | Numarul Int
+type UserAge
+    = Unknown
+    | Age Int
 
 
-num : PoateNumar
+num : UserAge
 num =
-    Numarul 987
+    Age 987
 
 
-textAfisat : PoateNumar -> String
+textAfisat : UserAge -> String
 textAfisat poateNum =
     case poateNum of
-        FaraNumar ->
-            "Nu există nici un număr"
+        Unknown ->
+            "User didn't reveal his age"
 
-        Numarul num ->
-            "Numărul este " ++ (toString num)
+        Age num ->
+            "User's age is " ++ (toString num)
 
 
 main =

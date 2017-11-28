@@ -3,17 +3,17 @@ module Main exposing (main)
 import Html exposing (Html, text)
 
 
-type PoateNumar
-    = FaraNumar
-    | Numarul Int
+type UserAge
+    = Unknown
+    | Age Int
 
 
-num : PoateNumar
+num : UserAge
 num =
-    FaraNumar
+    Unknown
 
 
-textAfisat : PoateNumar -> String
+textAfisat : UserAge -> String
 textAfisat poateNum =
     "test"
 
